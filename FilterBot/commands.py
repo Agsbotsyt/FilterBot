@@ -19,6 +19,9 @@ async def startCMD(client: FilterBot, message: Message):
       ],[
       InlineKeyboardButton('Update', url='t.me/ags_bot_update'),
       InlineKeyboardButton('Support', url='t.me/Ags_Support')
+      ],[
+      InlineKeyboardButton('Jion Over Group For Movies 🔥',url='t.me/Movies_Hub_Og'), 
+      InlineKeyboardButton('Jion Over Group For Anime ✨️',url='t.me/Movies_Hub_Anime'),
       ]]
 
     if "motech" == BOT_PICS[0]:
@@ -49,9 +52,13 @@ async def aboutCMD(client: FilterBot, message: Message):
         await db.add_user(message.from_user.first_name, message.from_user.id)
 
     keyboard = [[ InlineKeyboardButton('Tutorial', url='https://youtu.be/hDGgPNgjo9o'),
-                   InlineKeyboardButton('Repo', url='https://github.com/PR0FESS0R-99/FilterBot') ],
+                   InlineKeyboardButton('Repo', url='https://github.com/Agsbotsyt/FilterBot') ],
                 [ InlineKeyboardButton('Home', callback_data='main#start'),
-                  InlineKeyboardButton('Help', callback_data='main#help') ]]
+                  InlineKeyboardButton('Help', callback_data='main#help'),]]
+
+
+
+
 
     if "motech" == BOT_PICS[0]:
         await message.reply_text(text=AboutTxT.format(mention=message.from_user.mention), reply_markup=InlineKeyboardMarkup(keyboard))
@@ -75,7 +82,12 @@ async def maincallback(client: FilterBot, message):
                     [ InlineKeyboardButton('Help', callback_data='main#help'),
                       InlineKeyboardButton('About', callback_data='main#about') ],
                     [ InlineKeyboardButton('Update', url='t.me/ags_bot_update'),
-                      InlineKeyboardButton('Support', url='t.me/Ags_Support') ]]
+                      InlineKeyboardButton('Support', url='t.me/Ags_Support') ],
+                    [ InlineKeyboardButton('Jion Over Group For Movies 🔥',url='t.me/Movies_Hub_Og'),
+                      InlineKeyboardButton('Jion Over Group For Anime ✨️',url='t.me/Movies_Hub_Anime'),
+                     ]]
+
+   
         await message.message.edit(text=StartTxT.format(mention=message.from_user.mention), reply_markup=InlineKeyboardMarkup(keyboard), disable_web_page_preview=True)
 
     elif type == "help":
@@ -85,7 +97,7 @@ async def maincallback(client: FilterBot, message):
 
     elif type == "about":
         keyboard = [[ InlineKeyboardButton('Tutorial', url='https://youtu.be/hDGgPNgjo9o'),
-                       InlineKeyboardButton('Repo', url='https://github.com/PR0FESS0R-99/FilterBot') ],
+                       InlineKeyboardButton('Repo', url='https://github.com/Agsbotsyt/FilterBot') ],
                     [ InlineKeyboardButton('Home', callback_data='main#start'),
                       InlineKeyboardButton('Help', callback_data='main#help') ]]
         await message.message.edit(text=AboutTxT, reply_markup=InlineKeyboardMarkup(keyboard), disable_web_page_preview=True)
